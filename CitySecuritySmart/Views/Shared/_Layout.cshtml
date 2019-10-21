@@ -53,8 +53,8 @@
 
 <body>
 
-  <div class="col-24 col-md px-0 pb-2">
-    <h2>City Security Smart</h2>
+  <div class="zone-wrapper zone-branding-wrapper clearfix">
+    <h2 class="text-center">City Security Smart</html>
   </div>
 
   <nav class="navbar navbar-expand-lg bg-primary mb-4 ">
@@ -75,7 +75,7 @@
           <a class="nav-link" href="javascript:void(0)">Istatistik</a>
         </li>
         <li class="nav-item">
-           @Html.ActionLink("Ekibimiz", "Ekip", "Hakkimizda")
+          @Html.ActionLink("Ekibimiz", "Ekip", "Hakkimizda")
         </li>
         <li class="nav-item">
           <label class="nav-link navbar-search-box">
@@ -95,7 +95,7 @@
 
   <!-- Footer -->
 
-  <nav class="footer bg-primary pt-4 mb-4">
+  <footer class="footer bg-primary pt-4 mb-4 ">
     <div class="container text-center py-4">
       <div class="pb-3">
         <a href="javascript:void(0)" class="footer-text text-large font-weight-normal">City Security Smart</a> <span
@@ -129,25 +129,26 @@
         </div>
       </div>
     </div>
-  </nav>
+  </footer>
+
+
+  <!-- Layout inner -->
+
+  <div class="layout-overlay layout-sidenav-toggle"></div>
+
+  <script src="~/dist/vendor.js" asp-append-version="true"></script>
+  <!-- Core scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="~/assets/vendor/libs/popper/popper.js"></script>
+  <script src="~/assets/vendor/js/bootstrap.js"></script>
+  <script src="~/assets/vendor/js/sidenav.js"></script>
+  <!-- Libs -->
+  <!-- `perfect-scrollbar` library required by SideNav plugin -->
+  <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <!-- Main script -->
+  <script src="~/assets/js/main.js"></script>
+
+  @RenderSection("scripts", required: false)
 </body>
-
-<!-- Layout inner -->
-
-<div class="layout-overlay layout-sidenav-toggle"></div>
-
-<script src="~/dist/vendor.js" asp-append-version="true"></script>
-<!-- Core scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="~/assets/vendor/libs/popper/popper.js"></script>
-<script src="~/assets/vendor/js/bootstrap.js"></script>
-<script src="~/assets/vendor/js/sidenav.js"></script>
-<!-- Libs -->
-<!-- `perfect-scrollbar` library required by SideNav plugin -->
-<script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-<!-- Main script -->
-<script src="~/assets/js/main.js"></script>
-
-@RenderSection("scripts", required: false)
 
 </html>
