@@ -40,7 +40,7 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
 
 ## Found a Bug? Want to Contribute?
 
-* Kendi isminizde bir branch oluşturup bütün yaptığınız değişiklikleri oraya push etmeniz gerekir yada gerekmeyebilir siz bilirsiniz nasıl isterseniz :) (Aslında yaptığımız değişikliklerde çakışma olmaması için gerekli sayılır). 
+* Kendi isminizde bir branch oluşturup bütün yaptığınız değişiklikleri oraya push etmeniz gerekir yada gerekmeyebilir siz bilirsiniz nasıl isterseniz :) (Aslında yaptığımız değişikliklerde çakışma olmaması için gerekli sayılır tabi yine siz nasıl isterseniz). 
 * GitHub Issues kısmında yapılması gerekenleri kabaca yazdım oraya bakıp gerekli desteği sağlayabilirsiniz veya öğrenmek adına bir gün belirleyip eksik olan kısımları hep birlikte oturup pair programming şeklinde yazabiliriz.
 * Eğer projede eksik gördüğünüz başka yer varsa GitHub Issues kısmına ekleyebilirsiniz.
 * Bir bug ile karşılaşırsanız yine GitHub Issues kısmına ekleyebilirsiniz.
