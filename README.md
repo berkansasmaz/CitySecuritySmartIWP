@@ -46,7 +46,8 @@ Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi 
 * Google cloud shell içerisindeyken CitySecuritySmart.Web dosya yoluna gidip <b>npm run dev</b> ile proje çalıştırılmalı. 
 * Proje http://localhost:5000/ çalışır. Giriş yapma ekranı karşınıza gelirse ilk önce kayıt olmanız lazım, email ve şifrenizi girerek kayıt olabilirsiniz. 
 
-* New Monitoring sayfasında input alanına <b>deneme.mp4</b> yazıp <b>save</b> butonuna basıp test edebilirsiniz. Bu sırada biraz beklememiz gerekebilir endişelenmeyin. Eğer <b>deneme.mp4</b> yazıp <b>save</b> butonuna tıkladığımızda biraz bekledikten sonra sağ üst köşede böyle bir video yok hatası alırsanız API' yi bağlarken hata yapmışsınızdır. Cloud Shell üzerinde json dosyasının yolu tekrardan verilmeli ve tekrardan test edilmeli. Gerekli kurulumları buradan erişebilirsiniz : [Google video API doc](https://cloud.google.com/video-intelligence/docs/quickstart)
+* New Monitoring sayfasında input alanına <b>deneme.mp4</b> yazıp <b>save</b> butonuna basıp test edebilirsiniz. Bu sırada biraz beklememiz gerekebilir endişelenmeyin. Eğer <b>deneme.mp4</b> yazıp <b>save</b> butonuna tıkladığımızda biraz bekledikten sonra sağ üst köşede böyle bir video yok hatası alırsanız API' yi bağlarken hata yapmışsınızdır. Cloud Shell üzerinde json dosyasının yolu tekrardan verilmeli ve tekrardan test edilmeli. Video Intelligence API documentation
+bu [linkten](https://cloud.google.com/video-intelligence/docs/quickstart) erişebilirsiniz. 
 
 ## Found a Bug? Want to Contribute?
 
