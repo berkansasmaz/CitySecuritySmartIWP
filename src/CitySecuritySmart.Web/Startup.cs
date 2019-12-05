@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using CitySecuritySmart.Web.Providers;
 using CitySecuritySmart.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -37,7 +36,7 @@ namespace CitySecuritySmart.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Simple example with dependency injection for a data provider.
-            services.AddSingleton <IWeatherProvider, WeatherProviderFake> ();
+            // services.AddSingleton <IWeatherProvider, WeatherProviderFake> ();
 
             //https://docs.microsoft.com/en-us/ASPNET/Core/security/authentication/identity?view=aspnetcore-2.2&tabs=visual-studio
 
@@ -65,6 +64,7 @@ namespace CitySecuritySmart.Web
                 // Cookie settings
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromDays(15);
+				options.Cookie.Name ="css-auth";
 
                 options.LoginPath = "/Identity/Account/Login";
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";

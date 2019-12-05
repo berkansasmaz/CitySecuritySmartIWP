@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace CitySecuritySmart.Web.Controllers
 {
 
-    [Authorize]
-    public class HakkimizdaController : Controller
+ 
+    public class HakkimizdaController : SecureController
     {
         public IActionResult Ekip()
         {

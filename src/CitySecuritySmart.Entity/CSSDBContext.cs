@@ -10,9 +10,9 @@ namespace CitySecuritySmart.Entity {
     {
         public CSSDBContext(DbContextOptions options): base(options) 
         {
-            
         }
 
+		 	 public DbSet<CSSDMonitor> Monitors {get; set;}
     }
 
 }
