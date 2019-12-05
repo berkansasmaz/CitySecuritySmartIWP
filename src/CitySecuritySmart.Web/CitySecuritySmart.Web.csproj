@@ -4,7 +4,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.Cloud.VideoIntelligence.V1" Version="1.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
   <ItemGroup>
@@ -27,7 +30,7 @@
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
       <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </ResolvedFileToPublish>
