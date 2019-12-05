@@ -1,7 +1,7 @@
 ## Purpose
 
 <b>City Security Smart (CSS)</b>:<br>
-Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. AGS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
+Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. CSS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
 
 # Table of Contents
 
@@ -33,9 +33,11 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
   <img src="img/startup.png">
 </p>
 
-* CitySecuritySmart.Web içerisindeyken <b>npm install</b>
+* Terminalde CitySecuritySmart.Web içerisindeyken <b>npm install</b> yazılıp çalıştırılması lazım.
+
 *  CitySecuritySmart.Web içerisinde API' yi bağlamak için cloud shell içinde gerekli json dosya yolunun verilmesi lazım.
 *  Postgres veritabanında <b>citysecuritysmart</b> adlı veritabanı oluşturulmalı farklı bir ad kullanılırsa yine kullandığınız ismi Startup.cs dosyasında değiştirmeniz lazım.
+
 *  Terminal ekranında CitySecuritySmart.Entity dosya yolundayken <b>dotnet ef database update --startup-project ../CitySecuritySmart.Web/CitySecuritySmart.Web.cs</b> yazılmalı. Çıktı olarak postgres' de <b>citysecuritysmart</b> adlı veritabanın içerisinde tabloları oluşturması lazım. 
 <p align="center" >
   <img src="img/Entity.png">
@@ -44,12 +46,12 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
 * Google cloud shell içerisindeyken CitySecuritySmart.Web dosya yoluna gidip <b>npm run dev</b> ile proje çalıştırılmalı. 
 * Proje http://localhost:5000/ çalışır. Giriş yapma ekranı karşınıza gelirse ilk önce kayıt olmanız lazım, email ve şifrenizi girerek kayıt olabilirsiniz. 
 
-* New Monitoring sayfasında input alanına <b>deneme.mp4</b> yazıp <b>save</b> butonuna basıp test edebilirsiniz. Bu sırada biraz beklememiz gerekebilir endişelenmeyin. Eğer <b>deneme.mp4</b> yazıp <b>save</b> butonuna tıkladığınızda biraz bekledikten sonra sağ üst köşede böyle bir video yok hatası alırsanız API' yi bağlarken hata yapmışsınızdır endişelenmelisiniz. Cloud shel üzerinde sson dosyasının yolu tekrardan verilmesi gerekir. [Google video API doc](https://cloud.google.com/video-intelligence/docs/quickstart)
+* New Monitoring sayfasında input alanına <b>deneme.mp4</b> yazıp <b>save</b> butonuna basıp test edebilirsiniz. Bu sırada biraz beklememiz gerekebilir endişelenmeyin. Eğer <b>deneme.mp4</b> yazıp <b>save</b> butonuna tıkladığımızda biraz bekledikten sonra sağ üst köşede böyle bir video yok hatası alırsanız API' yi bağlarken hata yapmışsınızdır. Cloud Shell üzerinde json dosyasının yolu tekrardan verilmeli ve tekrardan test edilmeli. Gerekli kurulumları buradan erişebilirsiniz : [Google video API doc](https://cloud.google.com/video-intelligence/docs/quickstart)
 
 ## Found a Bug? Want to Contribute?
 
 * Kendi isminizde bir branch oluşturup bütün yaptığınız değişiklikleri oraya push etmeniz gerekir yada gerekmeyebilir siz bilirsiniz nasıl isterseniz :) (Aslında yaptığımız değişikliklerde çakışma olmaması için gerekli sayılır tabi yine siz nasıl  isterseniz). 
-* GitHub Issues kısmında yapılması gerekenleri kabaca yazdım oraya bakıp gerekli desteği sağlayabilirsiniz veya öğrenmek adına bir gün belirleyip eksik olan kısımları hep birlikte oturup pair programming şeklinde yazabiliriz.
+* GitHub Issues kısmında yapılması gerekenleri kabaca yazdım oraya bakıp gerekli desteği sağlayabilirsiniz veya öğrenmek adına bir gün belirleyip projenin eksik olan kısımlarını hep birlikte oturup pair programming şeklinde yazabiliriz.
 * Eğer projede eksik gördüğünüz başka yer varsa GitHub Issues kısmına ekleyebilirsiniz.
 * Bir bug ile karşılaşırsanız yine GitHub Issues kısmına ekleyebilirsiniz.
 
