@@ -1,6 +1,6 @@
 ## Purpose
 
-<b>City Security Smart</b> (CSS):<br>
+<b>City Security Smart (CSS)</b>:<br>
 Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. AGS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
 
 # Table of Contents
@@ -29,6 +29,10 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
 ## Installation
 
 * Postgres kurulumunda parola olarak <b>1234567890</b>  eğer farklı bir şifre kullanılmak isterseniz gerekli değişikliği Startup.cs dosyasında yapmanız lazım. 
+<p align="center" >
+  <img src="img/startup.png">
+</p>
+
 * CitySecuritySmart.Web içerisindeyken <b>npm install</b>
 *  CitySecuritySmart.Web içerisinde API' yi bağlamak için cloud shell içinde gerekli json dosya yolunun verilmesi lazım.
 *  Postgres veritabanında <b>citysecuritysmart</b> adlı veritabanı oluşturulmalı farklı bir ad kullanılırsa yine kullandığınız ismi Startup.cs dosyasında değiştirmeniz lazım.
@@ -36,6 +40,7 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
 <p align="center" >
   <img src="img/Entity.png">
 </p>
+
 * Google cloud shell içerisindeyken CitySecuritySmart.Web dosya yoluna gidip <b>npm run dev</b> ile proje çalıştırılmalı. 
 * Proje http://localhost:5000/ çalışır. Giriş yapma ekranı karşınıza gelirse ilk önce kayıt olmanız lazım, email ve şifrenizi girerek kayıt olabilirsiniz. 
 
