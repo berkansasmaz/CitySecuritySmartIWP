@@ -1,7 +1,7 @@
 ## Purpose
 
 <b>City Security Smart (CSS)</b>:<br>
-Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. CSS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
+Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. CSS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
 
 # Table of Contents
 
@@ -28,7 +28,7 @@ Güvenlik sistemlerinde görüntü ve ses içeriğinin otomatik olarak analiz ed
 
 ## Installation
 
-* Postgres kurulumunda parola olarak <b>1234567890</b>  eğer farklı bir şifre kullanılmak isterseniz gerekli değişikliği Startup.cs dosyasında yapmanız lazım. 
+* Postgres kurulumunda parola olarak <b>1234567890</b>  eğer farklı bir şifre kullanmak isterseniz gerekli değişikliği Startup.cs dosyasında yapmanız lazım. 
 <p align="center" >
   <img src="img/startup.png">
 </p>
