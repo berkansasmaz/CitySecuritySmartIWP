@@ -54,9 +54,9 @@ bu [linkten](https://cloud.google.com/video-intelligence/docs/quickstart) erişe
 * Kendi isminizde bir branch oluşturup bütün yaptığınız değişiklikleri oraya push etmeniz gerekir yada gerekmeyebilir siz bilirsiniz nasıl isterseniz :) (Aslında yaptığımız değişikliklerde çakışma olmaması için gerekli sayılır tabi yine siz nasıl  isterseniz). 
 * GitHub Issues kısmında yapılması gerekenleri kabaca yazdım oraya bakıp gerekli desteği sağlayabilirsiniz veya öğrenmek adına bir gün belirleyip projenin eksik olan kısımlarını hep birlikte oturup pair programming şeklinde yazabiliriz.
 * Eğer projede eksik gördüğünüz başka yer varsa GitHub Issues kısmına ekleyebilirsiniz.
+
 * Bir bug ile karşılaşırsanız yine GitHub Issues kısmına ekleyebilirsiniz.
 
-* Sistemi çökelticek zarar vericek girişmlerde lütfen bulunmayınız :).
 ## Test
 
 ## Production
