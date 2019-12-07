@@ -14,7 +14,7 @@ Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi 
 
 ## Features
 
-* Tehlikeli label'ları manuel olarak database kaydetmek yerine bir machine learning servisi yazarak bu label' ları otomatik olarak elde edebiliriz.
+* Tehlikeli label'ları manuel olarak database'e kaydetmek yerine bir machine learning servisi yazarak bu label' ları otomatik olarak elde edebiliriz.
 
 * Bilir kişi raporunu otomatize hale getirebiliriz.
 
