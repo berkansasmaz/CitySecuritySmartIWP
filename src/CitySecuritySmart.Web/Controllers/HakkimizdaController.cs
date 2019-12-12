@@ -8,7 +8,7 @@ namespace CitySecuritySmart.Web.Controllers
  
     public class HakkimizdaController : SecureController
     {
-        public IActionResult Ekip()
+        public IActionResult Index()
         {
             return View();
         }

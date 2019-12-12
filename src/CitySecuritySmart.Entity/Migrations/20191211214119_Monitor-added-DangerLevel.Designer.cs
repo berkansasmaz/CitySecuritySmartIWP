@@ -3,15 +3,17 @@ using System;
 using CitySecuritySmart.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CitySecuritySmart.Entity.Migrations
 {
     [DbContext(typeof(CSSDBContext))]
-    partial class CSSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20191211214119_Monitor-added-DangerLevel")]
+    partial class MonitoraddedDangerLevel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

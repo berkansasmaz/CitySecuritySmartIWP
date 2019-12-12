@@ -15,14 +15,16 @@
 
             <h4 class="d-flex justify-content-between align-items-center w-100 font-weight-bold py-3 mb-4">
               <div>All List</div> 
-              <button onclick="window.location.href='/monitoring/save'" type="button" class="btn btn-primary rounded-pill d-block"><span class="ion ion-md-add"></span>&nbsp; New Monitoring</button>
+              <router-link to="/monitoring/save">
+				  <button type="button" class="btn btn-primary rounded-pill d-block"><span class="ion ion-md-add"></span>&nbsp; New Monitoring</button>
+			  </router-link>
             </h4>
 
 
             <div class="card">
               <div class="card-datatable table-responsive">
-                <table class="table table-hover table-bordered">
-                  <thead>
+                <table class="table table-striped table-bordered">
+                  <thead class="thead-dark">
                     <tr>
 					<th >Name</th>
                       <th>Label</th>
@@ -32,7 +34,7 @@
 					  <th>Confidence</th>
                     </tr>
                   </thead>
-				  <tbody v-for="(item, index) in monitorings" :key="index">
+				  <tbody v-for="(item, index) in monitorings" :key="index" class="table-dark">
 					  <tr>
 						  <td>{{item.name}}</td>
 						  <td>{{item.label}}</td>
@@ -47,7 +49,6 @@
             </div>
           </div>
           <!-- / Content -->
-
   </div>
 </template>
 

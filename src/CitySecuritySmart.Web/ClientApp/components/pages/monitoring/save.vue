@@ -4,31 +4,37 @@
       icon="plus"
       title="New Monitoring"
     />
-	<p>gs://mts-bucket/{{ model.name }}</p>
-	<input type="text" v-model="model.name"/>
-    <button @click="save">
-      Save
-    </button>
+	  <template>
+		  <cssi-text value= model.name placeholder = "Type your video name" v-model="model.name"/>
+			<button @click="save" class="btn btn-success" >
+			<icon icon="plus"/>	Save
+			</button>
+	  </template>
   </div>
 </template>
 
 <script>
 import service from "service/monitoring";
+import router from "@/router";
 export default {
 	data() {
 		return {
 			model: { 
-				name: ""
+				name: "",
 			}
 		}
 	},
   methods: {
-    async save() {
-      var result = service.save({
-        name: this.model.name
-      });
-    }
-  }
+		async save() {
+			var result = await service.save(this.model);
+			console.log(result);
+			if(result.code === 200){
+					router.push({
+						name: "monitoring-list"
+					})
+			}
+		}
+	}
 };
 </script> 
 
