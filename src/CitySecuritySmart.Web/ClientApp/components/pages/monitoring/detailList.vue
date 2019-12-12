@@ -25,7 +25,6 @@
                 <table class="table table-hover table-bordered">
                   <thead class="thead-dark">
                     <tr>
-					  <th>#</th>
 					 <th>Name</th>
                       <th>Label</th>
 					  <th>Label Category</th>
@@ -37,7 +36,6 @@
 				  <tbody v-for="(item, index) in monitorings" :key="index">
 					  <template  v-if="item.name===name" >
 						  	<tr v-if="item.dangerLevel === 1" class="bg-danger">
-								<td >{{index + 1}}</td>
 								<td >{{item.name}}</td>
 								<td>{{item.label}}</td>
 								<td>{{item.labelCategory}}</td>
@@ -46,7 +44,6 @@
 								<td>{{item.confidence}}</td>
 							  </tr>
 							<tr class="bg-info">
-								<td>{{index + 1}}</td>
 								<td>{{item.name}}</td>
 								<td>{{item.label}}</td>
 								<td>{{item.labelCategory}}</td>
