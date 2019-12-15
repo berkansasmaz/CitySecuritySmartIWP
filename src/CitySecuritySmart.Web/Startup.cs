@@ -24,7 +24,7 @@ namespace CitySecuritySmart.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext <CSSDBContext> (
-                options => options.UseNpgsql("Server=localhost; Port=5432; Database= citysecuritysmart; User Id= postgres; Password=1234567890;")
+                options => options.UseNpgsql("Server=localhost; Port=5432; Database= CSS; User Id= postgres; Password=1234567890;")
             );
 
             services
