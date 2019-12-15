@@ -13,6 +13,7 @@ namespace CitySecuritySmart.Entity {
         }
 
 		 	 public DbSet<CSSDMonitor> Monitors {get; set;}
+			  public DbSet<CSSDDangerLabel> DangerLabels { get; set; }
     }
 
 }

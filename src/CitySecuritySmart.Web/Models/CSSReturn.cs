@@ -14,7 +14,6 @@ namespace CitySecuritySmart.Web.Models
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public object Data { get; set; }
 		public bool Success { get; set; }
-		
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public List<CSSReturnError> Errors { get; set; } // Biz kullanıcıya mesaj döneceğimiz zaman birden fazla hata mesajı dönüyorsak bu kısma ekliyoruz.
     }

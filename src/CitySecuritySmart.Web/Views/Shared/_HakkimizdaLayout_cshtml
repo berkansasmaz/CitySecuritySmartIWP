@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -41,36 +42,62 @@
 </head>
 
 <body>
-  
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-1">
-    <!-- Layout inner -->
-    <div class="layout-inner">
 
-      <!-- Layout navbar -->
-      <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x" id="layout-navbar">
-        <a href="/" class="navbar-brand">City Security Smart</a>
-        <!-- Sidenav toggle -->
-        <div class="layout-sidenav-toggle navbar-nav align-items-lg-center mr-auto mr-lg-4">
-          <a class="nav-item nav-link px-0 ml-2" href="">
-            <i class="ion ion-md-menu text-large align-middle"></i>
-          </a>
+     <!-- Layout navbar -->
+                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-dark text-white container-p-x"
+                    id="layout-navbar">
+                    <a href="/" class="navbar-brand">City Security Smart</a>
+
+
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Hakkimizda"
+                                    asp-action="Index">About</a>
+                            </li>
+                        </ul>
+                 </div>
+
+                </nav>
+
+  @RenderBody()
+
+
+  <!-- Footer -->
+
+  <footer class="footer bg-dark pt-4">
+    <div class="container text-center py-4">
+      <div class="pb-3">
+        <a href="javascript:void(0)" class="footer-text text-large font-weight-normal">City Security Smart</a> <span
+          class="align-top">©</span>
+      </div>
+      <hr class="mb-4">
+      <div class="row">
+        <div class="col-sm pb-4">
+          <div class="footer-text small font-weight-bold mb-3">ABOUT US</div>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">About</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Our Story</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Shipping</a>
         </div>
-
-		   <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Hakkimizda" asp-action="Index">About</a>
-                        </li>
-                    </ul>
-                </div>
-      </nav>
-@RenderBody()
+        <div class="col-sm pb-4">
+          <div class="footer-text small font-weight-bold mb-3">SUPPORT</div>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">FAQ</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Support</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Consultant</a>
+        </div>
+        <div class="col-sm pb-4">
+          <div class="footer-text small font-weight-bold mb-3">PARTNERS</div>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Wholesale</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Office solutions</a>
+          <a href="javascript:void(0)" class="footer-link d-block pb-2">Press Resource</a>
+        </div>
+      </div>
     </div>
-    <!-- Layout inner -->
+  </footer>
 
-<div class="layout-overlay layout-sidenav-toggle"></div>
+
+  <div class="layout-overlay layout-sidenav-toggle"></div>
   </div>
   <!-- / Layout wrapper -->
 
@@ -95,3 +122,5 @@
 
     @RenderSection("scripts", required: false)
 </body>
+
+</html>

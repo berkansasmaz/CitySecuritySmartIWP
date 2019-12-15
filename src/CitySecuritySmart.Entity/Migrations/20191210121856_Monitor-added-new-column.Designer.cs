@@ -3,15 +3,17 @@ using System;
 using CitySecuritySmart.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CitySecuritySmart.Entity.Migrations
 {
     [DbContext(typeof(CSSDBContext))]
-    partial class CSSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20191210121856_Monitor-added-new-column")]
+    partial class Monitoraddednewcolumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,26 +21,12 @@ namespace CitySecuritySmart.Entity.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("CitySecuritySmart.Entity.CSSDDangerLabel", b =>
-                {
-                    b.Property<Guid>("DangerLabelId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("DangerLabelName");
-
-                    b.HasKey("DangerLabelId");
-
-                    b.ToTable("DangerLabels");
-                });
-
             modelBuilder.Entity("CitySecuritySmart.Entity.CSSDMonitor", b =>
                 {
                     b.Property<Guid>("MonitorId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<float>("Confidence");
-
-                    b.Property<int>("DangerLevel");
 
                     b.Property<string>("EndTimeOffset");
 

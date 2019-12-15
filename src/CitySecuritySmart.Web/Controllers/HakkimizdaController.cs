@@ -4,11 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CitySecuritySmart.Web.Controllers
 {
-
- 
-    public class HakkimizdaController : SecureController
+    public class HakkimizdaController : Controller
     {
-        public IActionResult Ekip()
+        public IActionResult Index()
         {
             return View();
         }

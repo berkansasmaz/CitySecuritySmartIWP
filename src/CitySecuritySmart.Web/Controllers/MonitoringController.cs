@@ -10,16 +10,49 @@ namespace CitySecuritySmart.Web.Controllers
 {
     public class MonitoringController : ApiController
     {
-		 [HttpGet]
-        public async Task<IActionResult> Get()
+	 	[HttpGet("{id?}")]
+        public async Task<IActionResult> Get([FromRoute]Guid? id)
         {
-			var list = await Db.Monitors.ToListAsync();
+            if (id.HasValue)
+            {
+                if (id.Value == Guid.Empty)
+                {
+                    return Error("You must send monitor id to get.");
+                }
+                var monitor = await Db.Monitors.FirstOrDefaultAsync(x => x.MonitorId == id.Value && x.UserId == UserId);
+                if (monitor == null)
+                    return Error("Monitor not found.", code: 404);
+
+                return Success(data: new
+                {
+                    monitor.MonitorId,
+					monitor.UserId,
+                    monitor.Uri,
+                    monitor.Url,
+                    monitor.Name,
+                    monitor.Label,
+                    monitor.LabelCategory,
+                    monitor.StartTimeOffset,
+                    monitor.EndTimeOffset,
+					monitor.Confidence
+                });
+            }
+
+            var list = await Db.Monitors.ToListAsync();
             return Success(null, list);
         }
+		
+		
 		int result = 0;
 		[HttpPost]
         public async Task<IActionResult> Post([FromBody]CSSDMonitor value)
         {
+			var DangerList = await Db.DangerLabels.ToListAsync();
+			List<string> DangerName = new List<string>();
+			foreach (var item in DangerList)
+			{
+				 DangerName.Add(item.DangerLabelName);
+			} 
 			var userId = UserManager.GetUserId(User);
 			if(string.IsNullOrEmpty(value.Name))
 				return Error("Name is required.");
@@ -28,13 +61,17 @@ namespace CitySecuritySmart.Web.Controllers
 				Name = value.Name,
 				UserId = Guid.Parse(userId),
 			};
-			Uri baseUri = new Uri(@"gs://mts-bucket");
-			Uri myUri = new Uri(baseUri, dataObject.Name);
+			Uri videoBaseUri = new Uri(@"gs://mts-bucket");
+			Uri previewBaseUrl = new Uri(@"https://storage.cloud.google.com/mts-bucket/");
+			Uri bucketUri = new Uri(videoBaseUri, dataObject.Name);
+			Uri previewUrl = new Uri(previewBaseUrl, dataObject.Name);
+			dataObject.Uri = bucketUri.ToString();
+			dataObject.Url = previewUrl.ToString();
 			var client = VideoIntelligenceServiceClient.Create();
             var request = new AnnotateVideoRequest()
             {
 				//deneme.mp4
-                InputUri = myUri.ToString(),
+                InputUri = bucketUri.ToString(),
                 Features = { Feature.LabelDetection }
             };
             var op = client.AnnotateVideo(request).PollUntilCompleted();
@@ -43,6 +80,11 @@ namespace CitySecuritySmart.Web.Controllers
                 foreach (var annotation in Result.SegmentLabelAnnotations)
                 {
 					dataObject.Label = annotation.Entity.Description;
+					if (DangerName.Contains(dataObject.Label))
+					{
+						Console.WriteLine(dataObject.Label+"============?=====================================\n\n");
+						dataObject.DangerLevel = 1;
+					}
                     Console.WriteLine($"Video label: {annotation.Entity.Description}");
                     foreach (var entity in annotation.CategoryEntities)
                     {
@@ -61,8 +103,7 @@ namespace CitySecuritySmart.Web.Controllers
                         System.Console.WriteLine($"Confidence: {segment.Confidence}");
 						dataObject.MonitorId = new Guid();
 						Db.Monitors.Add(dataObject); 
-						 result = await Db.SaveChangesAsync();
-
+						result = await Db.SaveChangesAsync();
                     }
                 }
             }
