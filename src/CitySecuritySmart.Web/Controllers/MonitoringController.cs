@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CitySecuritySmart.Entity;
+using Google.Cloud.Storage.V1;
 using Google.Cloud.VideoIntelligence.V1;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,16 @@ namespace CitySecuritySmart.Web.Controllers
 {
     public class MonitoringController : ApiController
     {
+		List<string> listbuckets = new List<string>();
+		private List<string> ListBucket(string bucketName)
+		{
+			var storage = StorageClient.Create();
+			foreach (var storageObject in storage.ListObjects(bucketName, ""))
+			{
+				listbuckets.Add(storageObject.Name);	
+			}
+			return  listbuckets;
+		}
 	 	[HttpGet("{id?}")]
         public async Task<IActionResult> Get([FromRoute]Guid? id)
         {
@@ -37,9 +48,10 @@ namespace CitySecuritySmart.Web.Controllers
 					monitor.Confidence
                 });
             }
-
+			var videoList = ListBucket("mts-bucket");
+	
             var list = await Db.Monitors.ToListAsync();
-            return Success(null, list);
+            return Success(null, list,videoList);
         }
 		
 		

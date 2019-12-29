@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CitySecuritySmart.Web
 {
     [Route("api/v1/[controller]")]
-    public class ApiController : SecureDbController
+    public class ApiController : DbController
     {
       private UserManager<CSSUser> _userManager;
         public UserManager<CSSUser> UserManager => _userManager ?? (UserManager<CSSUser>)HttpContext?.RequestServices.GetService(typeof(UserManager<CSSUser>));
@@ -23,12 +23,13 @@ namespace CitySecuritySmart.Web
 	
 	
 		[NonAction]
-		public IActionResult Success(string message = default(string), object data = default(object), int code = 200){
+		public IActionResult Success(string message = default(string), object data = default(object),  object extendData = default(object), int code = 200){
 			return Ok(
 				new CSSReturn(){
 					Success = true,
 					Message = message,
 					Data = data,
+					ExtendData = extendData,
 					Code = code,
 				}
 			); //Burada JSON' da dönebilirdim farketmez zaten döneceğim datadan o bunu anlıycak.

@@ -4,11 +4,25 @@
       icon="plus"
       title="New Monitoring"
     />
+	  <div class="row mt-2 mb-2">
+      <div class="col-sm-4 col-xl-3" v-for="(item, index) in videoList" :key="index">
+          <div class="card mb-2">
+            <div class="card-body bg-dark text-white">
+              <div class="d-flex align-items-center">
+                <div class="lnr lnr-cart display-4 text-success"></div>
+                <div class="ml-3">
+                  <div class="text-medium">{{item}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
 	  <template>
 		  <cssi-text value= model.name placeholder = "Type your video name" v-model="model.name"/>
-			<button @click="save" class="btn btn-success" >
+			<div class="text-center"><button @click="save" class="btn btn-success text mb-4 mt-4" >
 			<icon icon="plus"/>	Save
-			</button>
+			</button></div>
 	  </template>
   </div>
 </template>
@@ -21,9 +35,15 @@ export default {
 		return {
 			model: { 
 				name: "",
-			}
+			},
+			videoList: []
 		}
 	},
+	 async mounted() {
+      var result = await service.list();
+      if (result.data && result.data.length)
+     	 this.videoList.push(...result.extendData);
+    },
   methods: {
 		async save() {
 			var result = await service.save(this.model);
