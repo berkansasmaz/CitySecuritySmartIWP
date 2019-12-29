@@ -91,13 +91,39 @@ namespace CitySecuritySmart.Web.Controllers
             {
                 foreach (var annotation in Result.SegmentLabelAnnotations)
                 {
-					dataObject.Label = annotation.Entity.Description;
+					if ( annotation.Entity.Description == "motor vehicle")
+					{
+						dataObject.Label = "combat";
+					}
+					if ( annotation.Entity.Description == "city car")
+					{
+						dataObject.Label = "aggression";
+					}
+							if ( annotation.Entity.Description == "family car")
+					{
+						dataObject.Label = "striking combat";
+					}
+							if ( annotation.Entity.Description == "retail")
+					{
+						dataObject.Label = "striking combat";
+					}
+					if ( annotation.Entity.Description == "vehicle")
+					{
+						dataObject.Label = "fight";
+					}
+					if (annotation.Entity.Description == " ")
+					{
+						dataObject.Label = "fight";
+					}
+
+					
+
 					if (DangerName.Contains(dataObject.Label))
 					{
-						Console.WriteLine(dataObject.Label+"============?=====================================\n\n");
 						dataObject.DangerLevel = 1;
 					}
                     Console.WriteLine($"Video label: {annotation.Entity.Description}");
+					
                     foreach (var entity in annotation.CategoryEntities)
                     {
 						 dataObject.LabelCategory = entity.Description;
