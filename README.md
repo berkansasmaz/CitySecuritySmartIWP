@@ -35,7 +35,7 @@ Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi 
 
 * Terminalde CitySecuritySmart.Web içerisindeyken <b>npm install</b> yazılıp çalıştırılması lazım.
 
-*  CitySecuritySmart.Web içerisinde API' yi bağlamak için cloud shell içinde gerekli json dosya yolunun verilmesi lazım.
+*  CitySecuritySmart.Web içerisinde API' yi bağlamak için cloud shell içinde gerekli json dosyasının yolunun verilmesi lazım.
 *  Postgres veritabanında <b>citysecuritysmart</b> adlı veritabanı oluşturulmalı farklı bir ad kullanılırsa yine kullandığınız ismi Startup.cs dosyasında değiştirmeniz lazım.
 
 *  Terminal ekranında CitySecuritySmart.Entity dosya yolundayken <b>dotnet ef database update --startup-project ../CitySecuritySmart.Web/CitySecuritySmart.Web.cs</b> yazılmalı. Çıktı olarak postgres' de <b>citysecuritysmart</b> adlı veritabanın içerisinde tabloları oluşturması lazım. 
