@@ -33,7 +33,7 @@ Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi 
   <img src="img/startup.png">
 </p>
 
-* Terminalde CitySecuritySmart.Web içerisindeyken <b>npm install && yarn install</b> yazılıp çalıştırılması lazım.
+* Terminalde CitySecuritySmart.Web içerisindeyken <b>npm install || yarn install</b> yazılıp çalıştırılması lazım.
 
 *  CitySecuritySmart.Web içerisinde API' yi bağlamak için cloud shell içinde gerekli json dosyasının yolunun verilmesi lazım.
 *  Postgres veritabanında <b>citysecuritysmart</b> adlı veritabanı oluşturulmalı farklı bir ad kullanılırsa yine kullandığınız ismi Startup.cs dosyasında değiştirmeniz lazım.
@@ -43,7 +43,7 @@ Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi 
   <img src="img/Entity.png">
 </p>
 
-* Google cloud shell içerisindeyken CitySecuritySmart.Web dosya yoluna gidip <b>npm run dev && yarn dev</b> ile proje çalıştırılmalı. 
+* Google cloud shell içerisindeyken CitySecuritySmart.Web dosya yoluna gidip <b>npm run dev || yarn dev</b> ile proje çalıştırılmalı. 
 * Proje http://localhost:5000/ çalışır. Giriş yapma ekranı karşınıza gelirse ilk önce kayıt olmanız lazım, email ve şifrenizi girerek kayıt olabilirsiniz. 
 
 * New Monitoring sayfasında input alanına <b>deneme.mp4</b> yazıp <b>save</b> butonuna basıp test edebilirsiniz. Bu sırada biraz beklememiz gerekebilir endişelenmeyin. Eğer <b>deneme.mp4</b> yazıp <b>save</b> butonuna tıkladığımızda biraz bekledikten sonra sağ üst köşede böyle bir video yok hatası alırsanız API' yi bağlarken hata yapmışsınızdır. Cloud Shell üzerinde json dosyasının yolu tekrardan verilmeli ve tekrardan test edilmeli. Video Intelligence API documentation'a
