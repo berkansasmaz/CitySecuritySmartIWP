@@ -3,12 +3,14 @@
 <b>City Security Smart (CSS)</b>:<br>
 Güvenlik sistemlerinde görüntü içeriğinin otomatik olarak analiz edilmesi önemli bir ihtiyaçtır. CSS projesinin temel amacı, kavram tanıma konusundaki bilgi birikimi ve geliştirilen altyapıyı güvenlik sistemlerine uyarlamaktır.
 
+## Warning 
+Bu projeye artık destek verilmemektedir. Bu yüzden lütfen dikkatli kullanın ancak yine de bir sorun ile karşılaşırsanız [benim ile iletişim kurmaktan çekinmeyin](mailto:berkansasmazz@gmail.com?subject=Ketum&body=Hi,).
+
 ## Features
 
 * Tehlikeli label'ları manuel olarak database'e kaydetmek yerine bir machine learning servisi yazarak bu label' ları otomatik olarak elde edebiliriz.
 
 * Bilir kişi raporunu otomatize hale getirebiliriz.
-
 
 ## Prerequisites
 
